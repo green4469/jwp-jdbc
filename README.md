@@ -32,4 +32,7 @@ docker-compose up -d
 > https://dev.mysql.com/doc/workbench/en/wb-admin-export-import-table.html
 
 
+# 현재 실행중인 도커 컨테이너에 접근하는 법
+- docker container ls
+- docker exec -it [container-id] bash
 

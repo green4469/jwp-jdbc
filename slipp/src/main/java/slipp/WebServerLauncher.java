@@ -10,8 +10,7 @@ import java.io.File;
 public class WebServerLauncher {
     private static final Logger logger = LoggerFactory.getLogger(WebServerLauncher.class);
     public static void main(String[] args) throws Exception {
-        ConnectionManager.initialize("org.h2.Driver", "jdbc:h2:mem:jwp-framework",
-                "sa", "");
+        ConnectionManager.initialize();
 
         String webappDirLocation = "./slipp/webapp/";
         Tomcat tomcat = new Tomcat();
