@@ -34,5 +34,10 @@ docker-compose up -d
 
 # 현재 실행중인 도커 컨테이너에 접근하는 법
 - docker container ls
-- docker exec -it [container-id] bash
+- docker exec -it [container-id | container name] bash
 
+## 도커에 로컬에 있는 sql 데이터 로드
+- MySQL 5.6 이상부터는 보안 문제로 커맨드라인을 통해 비밀번호 입력이 불가능하므로, 도커에 login-path 를 지정해줘야함
+    - (local) docker exec -it [container-id | container name] bash
+    - (docker) mysql_config_editor set --login-path=techcourse --host=localhost --user=techcourse --port=3306 --password
+- (local) cat survey_results_public.sql | sudo docker exec -i local-db mysql --login-path=techcourse jwp_jdbc

@@ -1,15 +1,12 @@
 package nextstep.jdbc;
 
 import org.apache.commons.dbcp2.BasicDataSource;
-import org.yaml.snakeyaml.Yaml;
-import org.yaml.snakeyaml.constructor.Constructor;
 
 import javax.sql.DataSource;
 import java.io.IOException;
 import java.io.InputStream;
 import java.sql.Connection;
 import java.sql.SQLException;
-import java.util.Map;
 import java.util.Properties;
 
 public class ConnectionManager {
