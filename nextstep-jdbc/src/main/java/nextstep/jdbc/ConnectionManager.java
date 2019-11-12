@@ -43,6 +43,19 @@ public class ConnectionManager {
         ds.setUrl(URL);
         ds.setUsername(USERNAME);
         ds.setPassword(PASSWORD);
+
+        ds.setMaxWaitMillis(100);
+        ds.setInitialSize(10);
+        ds.setMinIdle(10);
+        ds.setMaxIdle(10);
+        ds.setMaxTotal(10);
+        ds.setPoolPreparedStatements(true);
+        ds.setMaxOpenPreparedStatements(10);
+        try {
+            ds.getConnection().close();
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
         return ds;
     }
 
